@@ -11,9 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Run in dependency order: branches first, then users
+        // Run in dependency order
         $this->call([
             BranchSeeder::class ,
+            ShiftSeeder::class , // Seeds default "Shift Reguler Toko" + 7 day schedules
         ]);
     }
 }
