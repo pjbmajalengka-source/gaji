@@ -1,0 +1,97 @@
+##############################################
+#  Laravel Payroll PJBM — .gitignore
+#  Windows 10 Local ↔ HestiaCP/Ubuntu Prod
+##############################################
+
+# ── Laravel core ignores ──────────────────
+/vendor/
+/node_modules/
+
+# Compiled assets (build locally, never commit)
+/public/build/
+/public/hot/
+/public/storage/
+
+# Storage (symlinked in prod via artisan storage:link)
+/storage/*.key
+/storage/app/public/
+/storage/framework/cache/
+/storage/framework/sessions/
+/storage/framework/testing/
+/storage/framework/views/
+/storage/logs/
+
+# ── Environment files ─────────────────────
+# NEVER commit .env — contains DB passwords & APP_KEY
+.env
+.env.backup
+.env.production
+.env.staging
+.env.local
+# DO commit .env.example as a template
+!.env.example
+
+# ── Testing ───────────────────────────────
+/coverage/
+/.phpunit.result.cache
+/.phpunit.cache/
+phpunit.xml
+
+# ── IDE & Editor configs ──────────────────
+# VS Code
+.vscode/
+*.code-workspace
+.history/
+
+# JetBrains (PhpStorm, IntelliJ)
+.idea/
+*.iml
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim/Emacs
+*.swp
+*.swo
+*~
+\#*\#
+/.emacs.desktop
+
+# ── Windows OS files ──────────────────────
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ── macOS (if team grows) ─────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ── Laragon / XAMPP local overrides ──────
+laragon.json
+
+# ── Git deployment artifacts ──────────────
+# Post-receive hook logs (if using bare repo on server)
+deploy.log
+
+# ── Composer / NPM lock strategies ───────
+# Commit both lock files for reproducible builds
+# composer.lock  ← DO commit
+# package-lock.json / yarn.lock ← DO commit
+# DO NOT ignore them
+
+# ── Skriptest (debug/test scripts — tidak masuk repo) ─
+/skriptest/*
+!/skriptest/.gitkeep
+
+# ── Misc ──────────────────────────────────
+*.phar
+*.log
+npm-debug.log*
+yarn-error.log
