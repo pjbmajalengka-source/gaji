@@ -35,7 +35,7 @@ return new class extends Migration
 
             // Optional HR fields (useful to have from the start)
             $table->string('nik', 20)->nullable()->unique()->after('payout_preference')->comment('Nomor Induk Karyawan');
-            $table->enum('role', ['admin', 'hr', 'employee'])->default('employee')->after('nik');
+            $table->enum('role', ['superadmin', 'admin', 'hr', 'employee'])->default('employee')->after('nik');
             $table->date('hire_date')->nullable()->after('role');
             $table->boolean('is_active')->default(true)->after('hire_date');
         });
